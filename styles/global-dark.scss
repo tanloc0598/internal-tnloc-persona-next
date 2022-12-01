@@ -1,0 +1,36 @@
+.dark-mode
+{
+  body {
+    background-color: #121212;
+    color: #fff;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #fff;
+  }
+
+  p {
+    color: #fff;
+  }
+
+  li {
+    color: #fff;
+  }
+
+  .linetebel {
+    height: 4px;
+    background-color: #ffff;
+    display: block;
+  }
+  .linetipis {
+    height: 2px;
+    background-color: #ffff;
+    display: block;
+    margin: 3px 0px;
+  }
+}

@@ -1,8 +1,13 @@
+import { ReactElement } from "react";
 import Footer from "../commons/footer";
 import Header from "../commons/header";
 
+type LayoutProps = {
+  children: ReactElement
+}
 
-export default function MainLayout({ children }) {
+const MainLayout: (properties: LayoutProps) => JSX.Element = ({children}: LayoutProps) => {
+// export default function MainLayout({ children }) {
     return (
       <>
         <Header />
@@ -10,4 +15,6 @@ export default function MainLayout({ children }) {
         <Footer />
       </>
     )
-  }
+}
+
+export default MainLayout

@@ -1,10 +1,10 @@
-import Blank from '../components/layouts/blank'
-import MainLayout from '../components/layouts/mainLayout'
 import type { NextPageWithLayout } from './_app'
 
 import type { ReactElement } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import Blank from '../components/layouts/blank'
+import MainLayout from '../components/layouts/mainLayout'
 
 const Index: NextPageWithLayout = () => {
   return <div><p>

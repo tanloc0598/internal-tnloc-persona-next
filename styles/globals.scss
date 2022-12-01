@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "global-dark.scss";
+
+.psn-brand-color {
+  color: #FDC110;
+}
+.blink_me {
+  animation: blinker 1.3s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.linetebel {
+  height: 4px;
+  background-color: #121212;
+  display: block;
+}
+.linetipis {
+  height: 2px;
+  background-color: #121212;
+  display: block;
+  margin: 3px 0px;
+}
+
+.highlighter {
+    position: relative;
+}
+
+.highlighter::before {
+ /* Highlight color */
+ background-color: rgba(253, 193, 16, 0.8);
+ content: "";
+ position: absolute;
+ width: calc(100% + 4px);
+ height: 70%;
+ left: -2px;
+ bottom: 0;
+ z-index: -1;
+}
+
+/* 
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+} */
