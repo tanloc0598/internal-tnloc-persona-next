@@ -1,6 +1,11 @@
 import LightSwitcher from "./lightSwitcher";
+import SocialBar from "./socialBar";
+import React from "react";
 
-export default function Footer() {
+const Footer = () => {
+
+  const author = '<Tnloc/>'
+
   return (
     <div className="mt-10">
       <div
@@ -26,9 +31,9 @@ export default function Footer() {
             >
               <span className="">in tôuch</span><span className="blink_me">_</span>
             </p>
-            <p className="subpixel-antialiased leading-none">
-              {/* <Social /> */}
-            </p>
+            <div className="subpixel-antialiased leading-none">
+              <SocialBar/>
+            </div>
           </div>
         </div>
         <hr className="mt-12 mb-12" />
@@ -48,8 +53,8 @@ export default function Footer() {
             >
               <span
               ><a href="https://github.com/tanloc0598/tnloc-persona">
-                  {/* {{$config.footer}} */} 
-                  Personal ©2021 Created by {'<Tnloc/>'} with 💖 - Protoype Dec 2022
+                  {/* {{$config.footer}} */}
+                  Personal ©2021 Created by {author} with 💖 - Protoype Dec 2022
                 </a></span
               >
             </div>
@@ -61,3 +66,5 @@ export default function Footer() {
     </div>
   )
 }
+
+export default Footer
