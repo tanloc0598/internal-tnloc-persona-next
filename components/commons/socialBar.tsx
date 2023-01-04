@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAddressBook, faEnvelope } from "@fortawesome/free-solid-svg-icons"
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faFacebook, faLinkedin, faInstagram} from "@fortawesome/free-brands-svg-icons";
 const SocialBar = ()=>  {
 
     return (
@@ -34,13 +34,14 @@ const SocialBar = ()=>  {
     </div>
     <div>
       <a href="https://www.facebook.com/ngtnloc/" target="_blank" rel="noreferrer">
-        {/* <FontAwesomeIcon icon="['fab', 'facebook']" size="lg" color="grey" /> */}3
+        <FontAwesomeIcon icon={faFacebook} size="lg" color="grey"
+        />
       </a>
     </div>
     <div>
       <a href="https://www.instagram.com/tnloc/" target="_blank" rel="noreferrer">
-        {/* <FontAwesomeIcon icon="['fab', 'instagram']" size="lg" color="grey"
-      /> */}
+        <FontAwesomeIcon icon={faInstagram} size="lg" color="grey"
+        />
       </a>
     </div>
     <div>
@@ -48,8 +49,8 @@ const SocialBar = ()=>  {
         href="https://www.linkedin.com/in/nguyen-tan-loc-46862a125/" rel="noreferrer"
         target="_blank"
       >
-        {/* <FontAwesomeIcon icon="['fab', 'linkedin']" size="lg" color="grey"
-      /> */}4
+        <FontAwesomeIcon icon={faLinkedin} size="lg" color="grey"
+        />
       </a>
     </div>
     {/* <div>
