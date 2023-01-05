@@ -1,12 +1,33 @@
 import {Obj} from "../../utils/type/Obj";
 import isNil from "lodash/isNil"
+import {useEffect, useState} from "react";
 
 type props = {
-    content: Obj,
+    content?: any,
+    contents?:Obj,
     title?: string
 }
 const List : (props: props) => JSX.Element = (props: props) => {
-    const {title} = {...props};
+    const {title,content,contents} = {...props};
+
+    const [contentElm, setContentElm] = useState< JSX.Element[] >([])
+
+    useEffect(()=>{
+        let  _contents : JSX.Element[] = []
+
+
+        console.log(content)
+        //lissting view
+        if(contents?.allPostsData){
+            contents.allPostsData.forEach((post:Obj) => _contents.push(
+                <div dangerouslySetInnerHTML={post.content}></div>
+            ))
+        } else //single item listing view
+            _contents.push(
+                <div dangerouslySetInnerHTML={{__html: content}}></div>
+            )
+        setContentElm(_contents)
+    },[contents,content])
     return (
         <div className="md:p-8 md:container md:mx-auto">
             <div v-if="title" className="mb-8">
@@ -33,19 +54,12 @@ const List : (props: props) => JSX.Element = (props: props) => {
                     <div className="col-span-3">
                         <div className="grid gap-1">
                             <div className="col-span-2">
-                                <div v-if="contents">
+                                <div>
                                     <div className="col-span-2 text-sm">
-                                        {/*<nuxt-content*/}
-                                        {/*    v-for="acontent in contents"*/}
-                                        {/*:key="acontent.slug"*/}
-                                        {/*:document="acontent"*/}
-                                        {/*/>*/}
+                                        {
+                                            contentElm
+                                        }
                                     </div>
-                                </div>
-                                <div v-if="content">
-                                    <div className="col-span-2 text-sm"></div>
-                                    {/*<nuxt-content*/}
-                                    {/*:document="content" />*/}
                                 </div>
                             </div>
                         </div>

@@ -6,38 +6,51 @@ import Blank from '../components/layouts/blank'
 import MainLayout from '../components/layouts/mainLayout'
 import Title from "../components/commons/about/title";
 import List from "../components/commons/list";
+import {getPostData} from '../lib/contents'
+// import {getPostData} from '../lib/posts'
 
-const Index: NextPageWithLayout = () => {
-    return <div className={'tilt'}>
-        <div className="md:container md:mx-auto"
-        >
-            <Title/>
 
-        </div>
-        <div className="md:container md:mx-auto"
-        >
-            <p>
-                hello world
-            </p>
-        </div>
-        <div
-            className="m-5 md:m-4"
-            data-aos="fade-up"
-            data-aos-easing="fade-down"
-            data-aos-anchor-placement="center-bottom"
-        >
-            <List content ={{}}/>
-        </div>
+// @ts-ignore
+export default function Index({ allPostsData, shortIntro }) {
 
-    </div>
-}
-
-Index.getLayout = function getLayout(page: ReactElement) {
+    console.log(allPostsData,shortIntro)
     return (
+
         <Blank>
-            <MainLayout>{page}</MainLayout>
+            <MainLayout>
+                <div className={'tilt'}>
+                    <div className="md:container md:mx-auto"
+                    >
+                        <Title/>
+                    </div>
+                    <div className="md:container md:mx-auto"
+                    >
+                        <List content={shortIntro.contentHtml} title={shortIntro.title}/>
+                    </div>
+                    <div
+                        className="m-5 md:m-4"
+                        data-aos="fade-up"
+                        data-aos-easing="fade-down"
+                        data-aos-anchor-placement="center-bottom"
+                    >
+                        {/*<List contents ={shortIntro}/>*/}
+                    </div>
+
+                </div>
+            </MainLayout>
         </Blank>
     )
 }
 
-export default Index
+export async function getStaticProps() {
+    // const allPostsData = getSortedPostsData()
+
+    const shortIntro = await getPostData('/en/text/shortIntro')
+    return {
+        props: {
+            shortIntro
+        }
+    }
+}
+
+// export default Index
