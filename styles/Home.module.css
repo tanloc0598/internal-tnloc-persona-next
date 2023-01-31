@@ -1,3 +1,18 @@
+body {
+  overflow-x: hidden;
+}
+.tilt {
+  transform-style: preserve-3d;
+}
+.tilt-inner {
+  transform: translateZ(50px);
+}
+
+body {
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.8);
+}
+
 .container {
   padding: 0 2rem;
 }
