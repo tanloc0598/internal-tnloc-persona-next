@@ -16,9 +16,12 @@ export default function PostIndex({postsData}) {
         let _postsElm: JSX.Element[] = []
         postsData.map((post: any) => {
             _postsElm.push(
-                <Link href={`/post/${post.id}`} >
-                    {post.title ?? ""}
-                </Link>)
+                <li>
+                    <Link href={`/post/${post.id}`} >
+                        {post.title ?? ""}
+                    </Link>
+                </li>
+               )
         })
         setPostsElm(_postsElm)
     }, [postsData])
@@ -28,7 +31,9 @@ export default function PostIndex({postsData}) {
         <Blank>
             <MainLayout>
                 <div className={'tilt'}>
-                    {postsElm}
+                    <ul>
+                        {postsElm}
+                    </ul>
                 </div>
             </MainLayout>
         </Blank>
@@ -38,7 +43,8 @@ export default function PostIndex({postsData}) {
 export async function getStaticProps() {
     // const allPostsData = getSortedPostsData()
 
-    const postsData = getSortedPostsData()
+    const postsData = await getSortedPostsData()
+
     return {
         props: {
             postsData
