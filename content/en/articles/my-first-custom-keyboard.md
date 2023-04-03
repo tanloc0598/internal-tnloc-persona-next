@@ -14,19 +14,19 @@ author:
 
 <!--more-->
 <ul>
-<li>Named: <span class="tw-font-bold">KBCT01</span>
+<li>Named: <span class="font-bold">KBCT01</span>
 </li>
-<li>Kit: <span class="tw-font-bold">Feker FK84T</span>
+<li>Kit: <span class="font-bold">Feker FK84T</span>
 </li>
-<li>Switches: <span class="tw-font-bold">AKKO CS Switch – Lavender Purple</span>
+<li>Switches: <span class="font-bold">AKKO CS Switch – Lavender Purple</span>
 </li>
-<li>Keycap set: <span class="tw-font-bold">"PLASTIC" (clone) - XDA Profiles </span>
+<li>Keycap set: <span class="font-bold">"PLASTIC" (clone) - XDA Profiles </span>
 </ul>
 <br>
 <div>
 <img
   src="/img/articles/my-first-custom-keyboard/FullSizeRender.jpg"
-  class="tw-object-cover tw-rounded-2xl"
+  class="object-cover rounded-2xl"
 />
 </div>
 <br>
@@ -34,13 +34,13 @@ author:
 
 <img
 src="/img/articles/my-first-custom-keyboard/FullSizeRender_1.jpg"
-class="tw-object-cover tw-rounded-2xl"
+class="object-cover rounded-2xl"
 />
 </div>
 <br>
 <div>
 <img
   src="/img/articles/my-first-custom-keyboard/FullSizeRender_2.jpg"
-  class="tw-object-cover tw-rounded-2xl"
+  class="object-cover rounded-2xl"
 />
 </div>

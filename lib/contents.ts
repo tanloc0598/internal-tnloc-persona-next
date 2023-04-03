@@ -6,6 +6,7 @@ import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
 import {Obj} from "../utils/type/Obj";
+import {isNil} from "lodash";
 
 
 export async function getPostData( id: any, _postsDirectory: string = '/posts') {
@@ -28,23 +29,16 @@ export async function getPostData( id: any, _postsDirectory: string = '/posts') 
             throw error
         })
     const createdAt = matterResult?.data?.createdAt?.toString() ?? null
+    const updatedAt = matterResult?.data?.updatedAt?.toString() ?? createdAt
     const contentHtml = processedContent.toString()
     // Combine the data with the id and contentHtml
 
-    console.log('lox loxx', createdAt,
-        {
-            id,
-            contentHtml,
-            ...matterResult.data,
-            createdAt: matterResult?.data?.createdAt?.toString()
-        }
-    )
-
     return {
+        ...matterResult.data,
         id,
         contentHtml,
-        ...matterResult.data,
-        createdAt: createdAt
+        createdAt: createdAt,
+        updatedAt: updatedAt
     }
 }
 
@@ -54,7 +48,6 @@ export async function getSortedPostsData(_postsDirectory: string = '/posts') {
     const postsDirectory = path.join(process.cwd(), _postsDirectory)
     const fileNames = fs.readdirSync(postsDirectory)
 
-    console.log(fileNames)
     const allPostsData:Obj[] = []
 
     for (const [key, val] of Object.entries(fileNames)) {
@@ -69,7 +62,6 @@ export async function getSortedPostsData(_postsDirectory: string = '/posts') {
         let dateB:any = new Date(b.createdAt);
         return dateB - dateA;
     });
-
     return allPostsData
 }
 
