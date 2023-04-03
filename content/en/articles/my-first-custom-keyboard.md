@@ -26,7 +26,7 @@ author:
 <div>
 <img
   src="/img/articles/my-first-custom-keyboard/FullSizeRender.jpg"
-  class="object-cover rounded-2xl"
+  class="object-cover rounded-lg"
 />
 </div>
 <br>
@@ -34,13 +34,13 @@ author:
 
 <img
 src="/img/articles/my-first-custom-keyboard/FullSizeRender_1.jpg"
-class="object-cover rounded-2xl"
+class="object-cover rounded-lg"
 />
 </div>
 <br>
 <div>
 <img
   src="/img/articles/my-first-custom-keyboard/FullSizeRender_2.jpg"
-  class="object-cover rounded-2xl"
+  class="object-cover rounded-lg"
 />
 </div>

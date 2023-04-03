@@ -81,6 +81,12 @@ export default function PostIndex({allPostsData, intro}) {
                     data-aos-easing="fade-down"
                 >
                     <div className="mb-16">
+
+
+                        <img
+                            src="/img/articles/upgraded-my-first-custom-keyboard/cable_keycap/IMG_0894.jpg"
+                            className="object-cover rounded-lg"
+                        />
                         <h1
                             className="md:p-8 md:pb-2 text-4xl font-bold md:text-6xl subpixel-antialiased"
                         >
