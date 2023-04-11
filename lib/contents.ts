@@ -6,8 +6,6 @@ import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
 import {Obj} from "../utils/type/Obj";
-import {isNil} from "lodash";
-
 
 export async function getPostData( id: any, _postsDirectory: string = '/posts') {
     const postsDirectory = path.join(process.cwd(), _postsDirectory)
