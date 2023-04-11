@@ -7,7 +7,8 @@ const nextConfig = {
     SITE_TITLE: process.env.SITE_TITLE ?? " - Persona",
     LOGROCKET_APP_ID: process.env.LOGROCKET_APP_ID??"",
     GOOGLE_ANALYTICS_KEY: process.env.GOOGLE_ANALYTICS_KEY ?? "",
-    BASE_PATH: process.env.BASE_PATH ?? ""
+    BASE_PATH: process.env.BASE_PATH ?? "",
+    BLOG_URL: process.env.BLOG_URL ?? ""
   },
   basePath: process.env.BASE_PATH ?? "",
 }

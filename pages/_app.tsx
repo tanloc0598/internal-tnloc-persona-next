@@ -1,4 +1,5 @@
 import '../styles/globals.scss'
+import '../styles/global-dark.scss'
 
 import type {ReactElement, ReactNode} from 'react'
 import type {NextPage} from 'next'
@@ -8,6 +9,7 @@ import {Provider} from 'react-redux'
 import Head from 'next/head'
 import {PersistGate} from 'redux-persist/integration/react'
 import LogRocket from 'logrocket';
+import { ThemeProvider } from "next-themes";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
     getLayout?: (page: ReactElement) => ReactNode
@@ -24,7 +26,7 @@ export default function MyApp({Component, pageProps}: AppPropsWithLayout) {
     const logRocketAppId = process.env.LOGROCKET_APP_ID ?? ''
     LogRocket.init(logRocketAppId);
     return getLayout(
-        <Provider store={redux.store}>
+        <Provider store={redux.store} >
 
             <Head>
                 <meta name="viewport"
@@ -32,7 +34,9 @@ export default function MyApp({Component, pageProps}: AppPropsWithLayout) {
             </Head>
             <PersistGate loading={<></>}
                          persistor={redux.persistor}>
-                <Component {...pageProps} />
+                <ThemeProvider>
+                    <Component {...pageProps} />
+                </ThemeProvider>
             </PersistGate>
 
         </Provider>

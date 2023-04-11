@@ -8,22 +8,24 @@
 // }
 
 module.exports = {
-  // prefix: 'tw-',
-  future: {
-      // removeDeprecatedGapUtilities: true,
-      // purgeLayersByDefault: true,
-  },
-  content: [
-      "./app/**/*.{js,ts,jsx,tsx}", // Note the addition of the `app` directory.
-      "./pages/**/*.{js,ts,jsx,tsx}",
-      "./components/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-      fontFamily: {
-          sans: ['IBMPlexMono'],
-          serif: ['IBMPlexMono'],
-          mono: ['IBMPlexMono'],
-          display: ['IBMPlexMono'],
+    // prefix: 'tw-',
+    future: {
+        // removeDeprecatedGapUtilities: true,
+        // purgeLayersByDefault: true,
+    },
+    // darkMode: "class",
+    darkMode: ['class', '[data-mode="dark-mode"]'],
+    content: [
+        "./app/**/*.{js,ts,jsx,tsx}", // Note the addition of the `app` directory.
+        "./pages/**/*.{js,ts,jsx,tsx}",
+        "./components/**/*.{js,ts,jsx,tsx}",
+    ],
+    theme: {
+        fontFamily: {
+            sans: ['IBMPlexMono'],
+            serif: ['IBMPlexMono'],
+            mono: ['IBMPlexMono'],
+            display: ['IBMPlexMono'],
           body: ['IBMPlexMono'],
       },
       extend: {
