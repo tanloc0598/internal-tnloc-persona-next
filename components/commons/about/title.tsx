@@ -7,18 +7,18 @@ const Title : (props: props) => JSX.Element = (props: props) => {
                     <h1
                         className="text-4xl font-extrabold md:text-6xl subpixel-antialiased leading-none "
                     >
-                        About<span className="blink_me">_</span>
+                        Tnloc<span className="blink_me">_</span>
                     </h1>
                     <h1
                         className="text-4xl font-extrabold md:text-6xl subpixel-antialiased leading-none"
                     >
-                        Params 1
+                        Developer
                     </h1>
 
                     <h1
                         className="text-4xl font-extrabold md:text-6xl subpixel-antialiased leading-none"
                     >
-                        Params 2
+                        Coffee Lover
                     </h1>
                 </div>
             </div>

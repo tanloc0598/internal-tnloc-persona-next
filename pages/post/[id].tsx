@@ -22,22 +22,22 @@ export default function Post({postData}) {
         <Blank>
             <MainLayout>
 
-                <div className="container px-5 mx-auto lg:px-16">
+                <div className=" container px-5 mx-auto lg:px-16">
                     <div className="flex flex-col w-full mb-2 text-left">
                         <h1
-                            className="mb-2 text-3xl font-black tracking-tighter text-black lg:text-7xl md:text-4xl"
+                            className="mb-2 text-3xl font-black tracking-tighter light:text-black dark:text-white lg:text-7xl md:text-4xl"
                         >
                             {postData.title}
                         </h1>
                         <p
-                            className="mt-4 text-lg leading-snug tracking-tight text-gray-500"
+                            className="mt-4 text-lg leading-snug tracking-tight light:text-gray-500 dark:text-gray-100"
                         >
                             {postData.description}
                         </p>
                     </div>
                     <div className="flex flex-col lg:flex-row lg:space-x-12">
                         <div
-                            className="w-full mt-12 text-lg leading-snug tracking-tight text-gray-800 lg:px-0 lg:w-3/4 text-base text-justify break-words">
+                            className="w-full mt-12 text-lg leading-snug tracking-tight light:text-gray-800 dark:text-gray-100 lg:px-0 lg:w-3/4 text-base text-justify break-words">
                             <img src={postData.img} alt={postData.alt}/>
                             <div className="text-base text-justify break-words">
                             </div>
@@ -56,6 +56,7 @@ export default function Post({postData}) {
                         </div>
                     </div>
                 </div>
+
             </MainLayout>
         </Blank>
     )
