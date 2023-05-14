@@ -23,9 +23,10 @@ module.exports = {
     // darkMode: "class",
     darkMode: ['class', '[data-mode="dark"]'],
     content: [
-        "./app/**/*.{js,ts,jsx,tsx}", // Note the addition of the `app` directory.
-        "./pages/**/*.{js,ts,jsx,tsx}",
-        "./components/**/*.{js,ts,jsx,tsx}",
+        "./app/**/*.{js,ts,jsx,tsx,md}", // Note the addition of the `app` directory.
+        "./pages/**/*.{js,ts,jsx,tsx,md}",
+        "./components/**/*.{js,ts,jsx,tsx,md}",
+        "./content/**/*.{js,ts,jsx,tsx,md,mdx}",
     ],
     theme: {
         fontFamily: {
