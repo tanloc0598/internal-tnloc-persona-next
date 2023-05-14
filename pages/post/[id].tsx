@@ -5,6 +5,7 @@ import MainLayout from "../../components/layouts/mainLayout";
 import path from "path";
 import fs from "fs";
 import {getPostData} from "../../lib/contents";
+import Image from "next/image";
 
 // import {getPostData} from '../lib/posts'
 
@@ -12,10 +13,10 @@ import {getPostData} from "../../lib/contents";
 // @ts-ignore
 export default function Post({postData}) {
 
-    useEffect(() => {
-        console.log(postData);
-    }, postData)
-    console.log(postData)
+    // useEffect(() => {
+    //     console.log(postData);
+    // }, postData)
+    // console.log(postData)
 
 
     return (
@@ -38,7 +39,7 @@ export default function Post({postData}) {
                     <div className="flex flex-col lg:flex-row lg:space-x-12">
                         <div
                             className="w-full mt-12 text-lg leading-snug tracking-tight light:text-gray-800 dark:text-gray-100 lg:px-0 lg:w-3/4 text-base text-justify break-words">
-                            <img src={postData.img} alt={postData.alt}/>
+                            <Image src={postData.img} alt={postData.alt}/>
                             <div className="text-base text-justify break-words">
                             </div>
                             <div dangerouslySetInnerHTML={{__html: postData.contentHtml}}></div>

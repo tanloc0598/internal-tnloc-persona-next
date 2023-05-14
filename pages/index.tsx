@@ -11,7 +11,7 @@ export default function Index({shortIntro, skills, educationsBackground, working
     return (
         <Blank>
             <MainLayout>
-                <div className={'tilt'}>
+                <div className={'tilt m-4'}>
                     <div className="md:container md:mx-auto"
                     >
                         <Title/>

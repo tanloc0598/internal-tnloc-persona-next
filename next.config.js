@@ -11,6 +11,7 @@ const nextConfig = {
     BLOG_URL: process.env.BLOG_URL ?? ""
   },
   basePath: process.env.BASE_PATH ?? "",
+  images:{unoptimized: true}
 }
 
 module.exports = nextConfig
