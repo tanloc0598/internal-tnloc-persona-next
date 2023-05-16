@@ -52,7 +52,6 @@ export async function getStaticProps() {
     let workingExperience = await getSortedPostsData('/content/en/working_experience')
     let projects = await getSortedPostsData('/content/en/projects')
 
-
     await Promise.all([
         shortIntro,
         skills,

@@ -5,6 +5,11 @@ export default function Header() {
     return (
         <div className="p-3 md:container md:mx-auto">
             <div className="space-x-5 flex justify-center md:justify-end">
+                { !isNil(process.env.CV_URL) && !isEmpty(process.env.CV_URL) &&
+                    <div className="justify-items-center text-center">
+                        <a href={process.env.CV_URL} target={'_blank'}> Blog </a>
+                    </div>
+                }
                 { !isNil(process.env.BLOG_URL) && !isEmpty(process.env.BLOG_URL) &&
                     <div className="justify-items-center text-center">
                         <a href={process.env.BLOG_URL}> Blog </a>
