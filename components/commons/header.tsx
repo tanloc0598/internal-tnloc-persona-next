@@ -15,11 +15,11 @@ export default function Header() {
                         <a href={process.env.BLOG_URL}> Blog </a>
                     </div>
                 }
-                <div className="justify-items-center text-center">
+                {/* <div className="justify-items-center text-center">
                     <Link href={"/post"}>
                         Stories
                     </Link>
-                </div>
+                </div> */}
 
                 <div className="justify-items-center text-center">
                     <Link href={`${!isNil(process.env.BASE_PATH) && !isEmpty(process.env.BASE_PATH) ? process.env.BASE_PATH: '/'}`}>

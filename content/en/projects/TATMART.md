@@ -1,19 +1,14 @@
 ---
-title: ''
-date: 'Jun 2021 - Now '
+title: ""
+date: "Jun 2021 - Jul 2023"
 createdAt: 2021-06-14
 ---
 
 <div class="grid gap-1 mb-8">
   <div class="col-span-2">
     <div class="col-span-2">
-      <span class="">
-        <span class="bg-blue-900 text-yellow-500">TAT</span
-        ><span class="bg-blue-900 text-white">MART.COM</span>
-        && <span class="bg-blue-900 text-yellow-500">MRTHO.VN</span
-        > @
-        <span class="text-yellow-500">TATMachinery</span>
-      </span>
+    <span class="bg-blue-900 p-0.5">
+          <span class=" text-yellow-500">TAT</span><span class="text-white">MART.COM</span></span>&nbsp;&&&nbsp;<span class="bg-blue-900 text-yellow-500 p-0.5">MRTHO.VN</span>&nbsp;@&nbsp;<span class="bg-amber-500 text-white p-0.5">TAT<span class="text-blue-950">Machinery</span></span>
     </div>
     <div class="col-span-2 text-sm text-justify ml-2 mt-2">
       <span>Working with techstack:</span>
