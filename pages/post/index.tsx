@@ -32,7 +32,6 @@ export default function PostIndex({allPostsData, intro}) {
     useEffect(() => {
         let _postsElm: JSX.Element[] = []
         allPostsData.forEach((post: any) => {
-            console.log(post)
             _postsElm.push(
                 <Link key={`/post/${post.id}`} href={`/post/${post.id}`}>
 
@@ -115,16 +114,9 @@ export default function PostIndex({allPostsData, intro}) {
 }
 
 export async function getStaticProps() {
-    let storiesIntro = await getPostData('storiesIntro', '/content/en/text/')
-
-    const allPostsData = await getSortedPostsData('/content/en/articles')
-    return Promise.all([allPostsData, storiesIntro]).then((PostsData) => {
-        console.log(PostsData[1])
-        return {
-            props: {
-                intro: PostsData[1],
-                allPostsData: PostsData[0]
-            }
-        }
-    }).catch(err => console.log(err))
+    const [allPostsData, intro] = await Promise.all([
+        getSortedPostsData('/content/en/articles'),
+        getPostData('storiesIntro', '/content/en/text/'),
+    ])
+    return {props: {intro, allPostsData}}
 }

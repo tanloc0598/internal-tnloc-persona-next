@@ -5,9 +5,9 @@ export default function Header() {
     return (
         <div className="p-3 md:container md:mx-auto">
             <div className="space-x-5 flex justify-center md:justify-end">
-                { !isNil(process.env.CV_URL) && !isEmpty(process.env.CV_URL) &&
+                { !isNil(process.env.CV_LINK) && !isEmpty(process.env.CV_LINK) &&
                     <div className="justify-items-center text-center">
-                        <a href={process.env.CV_URL} target={'_blank'}> Blog </a>
+                        <a href={process.env.CV_LINK} target={'_blank'} rel="noreferrer"> CV </a>
                     </div>
                 }
                 { !isNil(process.env.BLOG_URL) && !isEmpty(process.env.BLOG_URL) &&

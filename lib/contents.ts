@@ -44,7 +44,7 @@ export async function getPostData( id: any, _postsDirectory: string = '/posts') 
 export async function getSortedPostsData(_postsDirectory: string = '/posts') {
     // Get file names under /posts
     const postsDirectory = path.join(process.cwd(), _postsDirectory)
-    const fileNames = fs.readdirSync(postsDirectory)
+    const fileNames = fs.readdirSync(postsDirectory).filter(f => f.endsWith(".md"))
 
     const allPostsData:Obj[] = []
 
@@ -66,7 +66,7 @@ export async function getSortedPostsData(_postsDirectory: string = '/posts') {
 export function getAllPostIds(_postsDirectory: string = '/posts') {
     const postsDirectory = path.join(process.cwd(), _postsDirectory)
 
-    const fileNames = fs.readdirSync(postsDirectory)
+    const fileNames = fs.readdirSync(postsDirectory).filter(f => f.endsWith(".md"))
     return fileNames.map(fileName => {
         return {
             params: {

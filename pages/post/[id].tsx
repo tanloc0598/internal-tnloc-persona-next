@@ -2,9 +2,7 @@ import React, {useEffect} from "react";
 import {formatDate} from "../../utils/DateTime";
 import Blank from "../../components/layouts/blank";
 import MainLayout from "../../components/layouts/mainLayout";
-import path from "path";
-import fs from "fs";
-import {getPostData} from "../../lib/contents";
+import {getAllPostIds, getPostData} from "../../lib/contents";
 import Image from "next/image";
 
 // import {getPostData} from '../lib/posts'
@@ -39,7 +37,9 @@ export default function Post({postData}) {
                     <div className="flex flex-col lg:flex-row lg:space-x-12">
                         <div
                             className="w-full mt-12 text-lg leading-snug tracking-tight light:text-gray-800 dark:text-gray-100 lg:px-0 lg:w-3/4 text-base text-justify break-words">
-                            <Image src={postData.img} alt={postData.alt}/>
+                            {postData.img &&
+                                <Image src={postData.img} alt={postData.alt ?? ''} width={1200} height={800}
+                                       className="w-full h-auto"/>}
                             <div className="text-base text-justify break-words">
                             </div>
                             <div dangerouslySetInnerHTML={{__html: postData.contentHtml}}></div>
@@ -63,37 +63,13 @@ export default function Post({postData}) {
     )
 }
 export async function getStaticPaths() {
-    const _postsDirectory = '/content/en/articles'
-    const postsDirectory = path.join(process.cwd(), _postsDirectory)
-    const fileNames = fs.readdirSync(postsDirectory)
-
-    console.log(_postsDirectory, postsDirectory, fileNames)
-    const paths: any = []
-    fileNames.map((fileName) => {
-        console.log(fileName)
-        const id = fileName.replace(/\.md$/, '')
-        paths.push({params: {id: id}})
-    })
-
-        return {
-            paths: paths,
-            fallback: false, // can also be true or 'blocking'
-        }
+    return {
+        paths: getAllPostIds('/content/en/articles'),
+        fallback: false,
     }
+}
 
-    export async function getStaticProps(context: any) {
-        const postsDirectory = '/content/en/articles/'
-        const post_id = await context.params.id
-        const postData = await getPostData(post_id, postsDirectory)
-        console.log(postData)
-        return await Promise.all([
-            postData
-        ]).then((data) => {
-            return {
-                props: {
-                    postData: data[0]
-                }
-            }
-        }).catch(err => console.log(err))
-
-    }
+export async function getStaticProps(context: any) {
+    const postData = await getPostData(context.params.id, '/content/en/articles/')
+    return {props: {postData}}
+}
