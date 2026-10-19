@@ -1,17 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
-import {isEmpty, isNil} from "lodash";
 
 export default function Header() {
     return (
         <header className="p-3 md:container md:mx-auto">
             <nav className="space-x-5 flex justify-center md:justify-end">
-                { !isNil(process.env.CV_LINK) && !isEmpty(process.env.CV_LINK) &&
+                { process.env.CV_LINK &&
                     <div className="justify-items-center text-center">
                         <a href={process.env.CV_LINK} target={'_blank'} rel="noreferrer"> CV </a>
                     </div>
                 }
-                { !isNil(process.env.BLOG_URL) && !isEmpty(process.env.BLOG_URL) &&
+                { process.env.BLOG_URL &&
                     <div className="justify-items-center text-center">
                         <a href={process.env.BLOG_URL}> Blog </a>
                     </div>
