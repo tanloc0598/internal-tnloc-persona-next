@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
+  output: 'export',
   env: {
-    SITE: process.env.SITE ?? " ",
+    SITE: process.env.SITE ?? "https://tanlocnguyen0598.github.io",
     SITE_TITLE: process.env.SITE_TITLE ?? " - Persona",
     LOGROCKET_APP_ID: process.env.LOGROCKET_APP_ID??"",
     GOOGLE_ANALYTICS_KEY: process.env.GOOGLE_ANALYTICS_KEY ?? "",

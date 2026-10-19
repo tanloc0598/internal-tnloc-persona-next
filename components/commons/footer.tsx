@@ -7,11 +7,9 @@ const Footer = () => {
   const author = '<Tnloc/>'
 
   return (
-    <div className="mt-10">
+    <footer className="mt-10">
       <div
         className="md:container md:mx-auto"
-        data-aos="fade-up"
-        data-aos-easing="fade-up"
       >
         <hr className="mt-24" />
         <div className="flex items-stretch p-3 md:p-8 mt-24 mb-16">
@@ -54,7 +52,7 @@ const Footer = () => {
               <span
               ><a href="https://github.com/tanloc0598/tnloc-persona">
                   {/* {{$config.footer}} */}
-                  Personal ©2021 Created by {author} with 💖 - Protoype Dec 2022
+                  Personal ©2021 Created by {author} with 💖 - Prototype Dec 2022
                 </a></span
               >
             </div>
@@ -63,7 +61,7 @@ const Footer = () => {
 
         <hr className="mt-12 mb-12" />
       </div>
-    </div>
+    </footer>
   )
 }
 

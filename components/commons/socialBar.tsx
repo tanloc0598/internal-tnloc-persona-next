@@ -11,39 +11,31 @@ const SocialBar = () => {
         >
 
           <div>
-      <a href="mailto:tnloc@outlook.com" target="_blank" rel="noreferrer">
+      <a href="mailto:tnloc@outlook.com" aria-label="Email" target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={faEnvelope} size="lg" color="grey" />
       </a>
     </div>
     <div>
-      <a href="/contact" rel="noreferrer">
-        <FontAwesomeIcon
-            icon={faAddressBook}
-            size="lg"
-            color="grey"
-        />
-      </a>
-    </div>
-    <div>
-      <a href="https://github.com/tanloc0598" target="_blank" rel="noreferrer">
+      <a href="https://github.com/tanloc0598" aria-label="GitHub" target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={faGithub} size="lg" color="grey"
       />
       </a>
     </div>
     <div>
-      <a href="https://www.facebook.com/ngtnloc/" target="_blank" rel="noreferrer">
+      <a href="https://www.facebook.com/ngtnloc/" aria-label="Facebook" target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={faFacebook} size="lg" color="grey"
         />
       </a>
     </div>
     <div>
-      <a href="https://www.instagram.com/tnloc/" target="_blank" rel="noreferrer">
+      <a href="https://www.instagram.com/tnloc/" aria-label="Instagram" target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={faInstagram} size="lg" color="grey"
         />
       </a>
     </div>
     <div>
       <a
+        aria-label="LinkedIn"
         href="https://www.linkedin.com/in/nguyen-tan-loc-46862a125/" rel="noreferrer"
         target="_blank"
       >

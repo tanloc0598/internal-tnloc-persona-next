@@ -1,27 +1,17 @@
-import React, {useEffect} from "react";
+import React from "react";
 import {formatDate} from "../../utils/DateTime";
 import Blank from "../../components/layouts/blank";
 import MainLayout from "../../components/layouts/mainLayout";
 import {getAllPostIds, getPostData} from "../../lib/contents";
 import Image from "next/image";
+import {Obj} from "../../utils/type/Obj";
 
-// import {getPostData} from '../lib/posts'
-
-
-// @ts-ignore
-export default function Post({postData}) {
-
-    // useEffect(() => {
-    //     console.log(postData);
-    // }, postData)
-    // console.log(postData)
-
-
+export default function Post({postData}: { postData: Obj }) {
     return (
         <Blank>
-            <MainLayout>
+            <MainLayout title={postData.title} description={postData.description} image={postData.img}>
 
-                <div className=" container px-5 mx-auto lg:px-16">
+                <article className=" container px-5 mx-auto lg:px-16">
                     <div className="flex flex-col w-full mb-2 text-left">
                         <h1
                             className="mb-2 text-3xl font-black tracking-tighter light:text-black dark:text-white lg:text-7xl md:text-4xl"
@@ -52,11 +42,11 @@ export default function Post({postData}) {
                             <p
                                 className="mt-4 text-sm leading-snug tracking-tight text-gray-500"
                             >
-                                Article last updated: {formatDate(postData.updatedAt)}
+                                Article last updated: <time dateTime={postData.updatedAt}>{formatDate(postData.updatedAt)}</time>
                             </p>
                         </div>
                     </div>
-                </div>
+                </article>
 
             </MainLayout>
         </Blank>

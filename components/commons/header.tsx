@@ -1,10 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import {isEmpty, isNil} from "lodash";
 
 export default function Header() {
     return (
-        <div className="p-3 md:container md:mx-auto">
-            <div className="space-x-5 flex justify-center md:justify-end">
+        <header className="p-3 md:container md:mx-auto">
+            <nav className="space-x-5 flex justify-center md:justify-end">
                 { !isNil(process.env.CV_LINK) && !isEmpty(process.env.CV_LINK) &&
                     <div className="justify-items-center text-center">
                         <a href={process.env.CV_LINK} target={'_blank'} rel="noreferrer"> CV </a>
@@ -22,7 +23,7 @@ export default function Header() {
                 </div> */}
 
                 <div className="justify-items-center text-center">
-                    <Link href={`${!isNil(process.env.BASE_PATH) && !isEmpty(process.env.BASE_PATH) ? process.env.BASE_PATH: '/'}`}>
+                    <Link href="/">
                         About
                     </Link>
                 </div>
@@ -30,13 +31,15 @@ export default function Header() {
                 <nuxt-link to="/contacts"> Contact </nuxt-link>
             </div> --> */}
                 <div className="justify-items-center text-center">
-                    <img
-                        className="block mx-auto h-6 md:h-8 rounded-full sm:mx-0"
+                    <Image
+                        className="block mx-auto h-6 w-6 md:h-8 md:w-8 rounded-full sm:mx-0"
                         src="https://s.gravatar.com/avatar/052b8e5a539ee4a6e4e7bbe6b1605458?s=80"
-                        alt="Loc's"
+                        alt="Tnloc avatar"
+                        width={80}
+                        height={80}
                     />
                 </div>
-            </div>
-        </div>
+            </nav>
+        </header>
     )
 }

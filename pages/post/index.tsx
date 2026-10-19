@@ -1,112 +1,50 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import Blank from "../../components/layouts/blank";
 import MainLayout from "../../components/layouts/mainLayout";
 import {getPostData, getSortedPostsData} from "../../lib/contents";
 import Link from "next/link";
-import {isNil} from "lodash";
+import Image from "next/image";
 import {formatDate} from "../../utils/DateTime";
-// import {getPostData} from '../lib/posts'
+import {Obj} from "../../utils/type/Obj";
 
+const heroImg = '/img/articles/upgraded-my-first-custom-keyboard/cable_keycap/IMG_0894.jpg'
 
-// @ts-ignore
-export default function PostIndex({allPostsData, intro}) {
-    const [postsElm, setPostsElm] = useState<JSX.Element[]>([])
-    const [introElm, setIntroElm] = useState<JSX.Element>()
-
-    //TODO: change this to useMemo
-    useEffect(() => {
-
-        if (!isNil(intro)) {
-            setIntroElm(
-                <div
-                    className="md:p-8 md:pt-2 md:container md:mx-auto"
-                >
-                    <div dangerouslySetInnerHTML={{__html: intro.contentHtml}}></div>
-                </div>
-            )
-        }
-    }, [
-        intro
-    ])
-
-    useEffect(() => {
-        let _postsElm: JSX.Element[] = []
-        allPostsData.forEach((post: any) => {
-            _postsElm.push(
-                <Link key={`/post/${post.id}`} href={`/post/${post.id}`}>
-
-                <div key={post.id}
-                    className="text-justify mb-6"
-                    data-aos="fade-up"
-                    data-aos-easing="fade-down"
-                    data-aos-duration="900"
-                >
-                        <div
-                            className="md:grid md:grid-rows-3 md:grid-cols-4 md:gap-2 mb-12"
-                        >
-                            <>
-                                <div className="md:row-span-3">
-                                    { formatDate(post.createdAt) }
-                                </div>
-                                <div className="md:col-span-3">{post.title ?? ""}</div>
-                                <div className="md:row-span-2 md:col-span-3">
-                                    { post.description }
-                                </div>
-                            </>
-                        </div>
-
-
-                </div>
-                </Link>
-
-            )
-        })
-        if (_postsElm.length > 0) {
-            setPostsElm(_postsElm)
-        } else {
-
-            setPostsElm([(<div key={'no-post'}>nothing here, yet! : (</div>)])
-        }
-    }, [allPostsData])
-
+export default function PostIndex({allPostsData, intro}: { allPostsData: Obj[], intro: Obj }) {
     return (
-
         <Blank>
-            <MainLayout key={'post-page-layout'}>
-
-                <div
-                    className="p-3 md:container md:mx-auto"
-                    data-aos="fade-up"
-                    data-aos-easing="fade-down"
-                >
+            <MainLayout title="Stories" description="Stories and notes by Tnloc." image={heroImg}>
+                <div className="p-3 md:container md:mx-auto">
                     <div className="mb-16">
-
-
-                        <img
-                            src="/img/articles/upgraded-my-first-custom-keyboard/cable_keycap/IMG_0894.jpg"
-                            className="object-cover rounded-lg"
+                        <Image
+                            src={`${process.env.BASE_PATH ?? ''}${heroImg}`}
+                            alt="Custom keyboard with cable and keycaps"
+                            className="object-cover rounded-lg w-full h-auto"
+                            width={1200}
+                            height={800}
+                            priority
                         />
-                        <h1
-                            className="md:p-8 md:pb-2 text-4xl font-bold md:text-6xl subpixel-antialiased"
-                        >
+                        <h1 className="md:p-8 md:pb-2 text-4xl font-bold md:text-6xl subpixel-antialiased">
                             Stories<span className="blink_me">_</span>
                         </h1>
-                        {introElm}
-
+                        <div className="md:p-8 md:pt-2 md:container md:mx-auto"
+                             dangerouslySetInnerHTML={{__html: intro.contentHtml}}/>
                     </div>
 
                     <div className="md:p-8">
-                        {postsElm}
+                        {allPostsData.length === 0 && <div>nothing here, yet! : (</div>}
+                        {allPostsData.map((post) => (
+                            <article key={post.id} className="text-justify mb-6">
+                                <Link href={`/post/${post.id}`}
+                                      className="block md:grid md:grid-rows-3 md:grid-cols-4 md:gap-2 mb-12">
+                                    <time dateTime={post.createdAt} className="md:row-span-3">
+                                        {formatDate(post.createdAt)}
+                                    </time>
+                                    <h2 className="md:col-span-3">{post.title ?? ""}</h2>
+                                    <p className="md:row-span-2 md:col-span-3">{post.description}</p>
+                                </Link>
+                            </article>
+                        ))}
                     </div>
-                    {/*// <!-- <div className="md:container md:mx-auto">*/}
-                    {/*//     <div className="grid grid-cols-2 gap-2">*/}
-                    {/*//         <div className="grid grid-cols-2">*/}
-                    {/*//             <light-switcher /><language-switcher />*/}
-                    {/*//         </div>*/}
-                    {/*//         <div><social /></div>*/}
-                    {/*//     </div>*/}
-                    {/*// </div> -->*/}
-
                 </div>
             </MainLayout>
         </Blank>

@@ -1,26 +1,11 @@
-type props = {
-}
-const Title : (props: props) => JSX.Element = (props: props) => {
+const Title = () => {
     return (
             <div className="h-screen flex items-stretch p-3 md:p-8">
-                <div className="self-center">
-                    <h1
-                        className="text-4xl font-extrabold md:text-6xl subpixel-antialiased leading-none "
-                    >
-                        Tnloc<span className="blink_me">_</span>
-                    </h1>
-                    <h1
-                        className="text-4xl font-extrabold md:text-6xl subpixel-antialiased leading-none"
-                    >
-                        Developer
-                    </h1>
-
-                    <h1
-                        className="text-4xl font-extrabold md:text-6xl subpixel-antialiased leading-none"
-                    >
-                        Coffee Lover
-                    </h1>
-                </div>
+                <h1 className="self-center text-4xl font-extrabold md:text-6xl subpixel-antialiased leading-none">
+                    <span className="block">Tnloc<span className="blink_me">_</span></span>
+                    <span className="block">Developer</span>
+                    <span className="block">Coffee Lover</span>
+                </h1>
             </div>
     )
 }
