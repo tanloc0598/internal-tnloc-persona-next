@@ -11,7 +11,7 @@ type LayoutProps = {
   image?: string
 }
 
-const MainLayout: (properties: LayoutProps) => JSX.Element = ({children, title, description, image}: LayoutProps) => {
+const MainLayout = ({children, title, description, image}: LayoutProps) => {
     const {asPath} = useRouter()
     const site = (process.env.SITE ?? '').trim().replace(/\/$/, '')
     const fullTitle = `${title ?? 'Tnloc'}${process.env.SITE_TITLE ?? ''}`

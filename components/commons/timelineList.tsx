@@ -5,7 +5,7 @@ type props = {
     title?: string
     listTitle?: string
 }
-const TimelineList: (props: props) => JSX.Element = ({listTitle, title, contents}: props) => {
+const TimelineList = ({listTitle, title, contents}: props) => {
     return (
         <section className="md:p-8 md:container md:mx-auto">
             <div className="mb-8">

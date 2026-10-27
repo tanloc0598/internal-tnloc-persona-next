@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useSyncExternalStore} from "react";
 import {useTheme} from "next-themes";
 import {faMoon, faSun} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -6,8 +6,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 export default function LightSwitcher() {
     const {resolvedTheme, setTheme} = useTheme();
     // theme is only known on the client; render a placeholder until mounted to avoid hydration mismatch
-    const [mounted, setMounted] = useState(false)
-    useEffect(() => setMounted(true), [])
+    const mounted = useSyncExternalStore(() => () => {}, () => true, () => false)
 
     const isDark = resolvedTheme === 'dark'
 

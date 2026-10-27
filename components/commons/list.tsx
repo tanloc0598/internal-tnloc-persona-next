@@ -3,7 +3,7 @@ type props = {
     title?: string
     listTitle?: string
 }
-const List: (props: props) => JSX.Element = ({listTitle, title, content}: props) => {
+const List = ({listTitle, title, content}: props) => {
     return (
         <section className="md:p-8 md:container md:mx-auto">
             {title &&

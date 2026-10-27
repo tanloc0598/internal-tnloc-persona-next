@@ -1,5 +1,4 @@
 import '../styles/globals.scss'
-import '../styles/global-dark.scss'
 
 import type {ReactElement, ReactNode} from 'react'
 import type {NextPage} from 'next'

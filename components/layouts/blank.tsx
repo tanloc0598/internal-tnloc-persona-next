@@ -6,7 +6,7 @@ type LayoutProps = {
   children: ReactElement
 }
 
-const Blank: (properties: LayoutProps) => JSX.Element = ({children}: LayoutProps) => {
+const Blank = ({children}: LayoutProps) => {
     return (
       <>
         <main>{children}</main>
