@@ -40,15 +40,8 @@ module.exports = {
             colors: {
                 'main-color': 'rgb(247, 208, 12)',
             },
-            typography: (theme) => ({
-                dark: {
-                    css: {
-                        color: 'white',
-                    },
-                },
-            }),
         },
     },
     variants: {},
-    plugins: [require('@tailwindcss/typography')],
+    plugins: [],
 }
